@@ -61,9 +61,7 @@ resource "helm_release" "ingress_nginx" {
   
 }
 
-output "l" {
-  
-}
+
 
 # Display load balancer hostname (typically present in AWS)
 /* output "load_balancer_hostname" {
