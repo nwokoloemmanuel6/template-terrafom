@@ -17,7 +17,7 @@ pipeline {
             }
             steps {
                 script {
-                    dir('eks') {
+                    dir('eks-cluster') {
                         sh "terraform init"
                         sh "terraform apply -auto-approve"
                     }
@@ -31,7 +31,7 @@ pipeline {
             }
             steps {
                 script {
-                    dir('eks') {
+                    dir('eks-cluster') {
                         sh "terraform destroy -auto-approve"
                     }
                 }
