@@ -48,5 +48,15 @@ pipeline {
                 }
             }
         }
+
+        stage("Deploy ingress rule to EKS") {
+            steps {
+                script {
+                    dir('ingress-rule') {
+                        sh "kubectl apply -f ingress-rule.yaml"
+                    }
+                }
+            }
+        }
     }
 }
