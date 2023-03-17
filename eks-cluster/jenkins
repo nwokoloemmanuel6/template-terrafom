@@ -10,8 +10,10 @@
               stage("Create an EKS Cluster") {
                 steps {
                      script {
-                            sh "terraform init"
-                            sh "terraform apply -auto-approve"
+                         dir('eks-cluster') {
+                        sh "terraform init"
+                        sh "terraform apply -auto-approve"
+                    }
                      }
                 }
               }
